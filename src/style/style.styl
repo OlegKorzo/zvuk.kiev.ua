@@ -1,0 +1,280 @@
+body {
+  padding: 0;
+  margin:  0;
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 15px;
+  font-size: 12px;
+  background-color: rgba(245, 245, 245, 1);
+  background-repeat: no-repeat;
+  min-width: 320px;
+  overflow-y: scroll;
+  opacity: 1 !important;
+  background-position: center;
+
+  *::selection {
+    background-color: black;
+    color: white;
+  }
+}
+
+  .price-sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    font-size: 20px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    margin-bottom: 40px !important;
+
+    @media (min-width: 720px) {
+      //display: none;
+    }
+
+
+
+    span {
+      margin-left: 2px;
+      opacity: .5;
+      font-size: 80%;
+    }
+
+
+  }
+
+  .zv-logo {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 40px !important;
+    background-image: url('/static/logo.svg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+
+
+.zv-copyright {
+  padding: 20px 42px;
+
+}
+
+.zv-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 0;
+  //background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='rgba(225, 225, 225, 1)' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+
+
+  &>* {
+    margin: 0 auto;
+
+    @media (max-width: 1080px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 720px) {
+      padding: 0;
+    }
+  }
+}
+
+
+
+  h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .zv-box {
+
+    &._inner {
+      border-radius: 8px;
+      background-color: white;
+      padding: 21px 42px;
+      box-shadow: 0 14px 16px -16px rgba(0, 0, 0, .4);
+      border: 2px solid rgba(0, 0, 0, 1);
+
+
+      @media (max-width: 720px) {
+        padding: 21px 21px;
+        border: none;
+      }
+    }
+  }
+
+  .zv-line {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 720px) {
+      flex-wrap: wrap;
+    }
+
+    .zv-calc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+
+      &>* {
+        flex-basis: 0;
+        min-width: 1px;
+        flex-grow: 1;
+        padding: 0 20px;
+      }
+
+
+      @media (max-width: 720px) {
+        flex-basis: 100%;
+        min-width: 100%;
+        margin-bottom: 10px;
+        //flex-direction: column;
+        align-items: center;
+
+        &>* {
+          flex-basis: 0 !important;
+          margin-bottom: 10px;
+          padding: 0;
+          font-size: 120% !important;
+          //text-align: center;
+
+          &:nth-child(2) {
+            max-width: 80px;
+          }
+
+
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+      }
+
+      input {
+        height: 40px;
+        line-height: 40px;
+        background-color: rgba(235, 235, 235, .5);
+        padding: 0 0 0 8px;
+        border-radius: 8px;
+        font-size: 13px;
+        border: 2px solid rgba(220, 220, 220, 1);
+        box-sizing: border-box;
+        transition: all .5s ease-in-out;
+
+
+        @media (max-width: 720px) {
+          margin-bottom: 0;
+          margin-bottom: 10px;
+        }
+
+        &:hover {
+          border: 2px solid rgba(200, 200, 200, 1);
+        }
+
+        &:focus {
+          border: 2px solid rgba(0, 0, 0, 1);
+          outline: none;
+        }
+
+        &[type='checkbox'] {
+          position: absolute;
+          left: -100vw;
+
+
+          &+div {
+            width: 100%;  // Прямое требование заказчика, чтобы инпуты выглядели так
+            //min-width: 120px;
+            height: 40px;
+            border-radius: 20px;
+            margin-right: 10px;
+            position: relative;
+            background-color: rgba(205, 205, 205, 1);
+            cursor: pointer;
+            padding: 0;
+
+            &:before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              border-radius: 20px;
+              width: 36px;
+              height: 36px;
+              transition: all .15s ease-in-out;
+              background-color: rgba(0, 0, 0, 1);
+              border: 2px solid transparent;
+              box-sizing: border-box;
+            }
+          }
+
+          &:checked+div {
+            //border: 2px solid rgba(20, 20, 20, 1);
+          }
+
+          &:checked+div:before {
+            left: calc(100% - 38px);
+            background-color: rgba(240, 240, 240, 1);
+            border: 2px solid rgba(0, 0, 0, 1);
+          }
+        }
+      }
+
+      label {
+        font-size: 12px;
+        //height: 30px;
+        //line-height: 15px;
+        //margin-bottom: 10px;
+        opacity: .75;
+
+        &:last-child {
+          display: flex;
+          align-items: center;
+        }
+
+        &+label {
+          min-height: 40px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      div {
+        height: 40px;
+        line-height: 40px;
+        border: none;
+        background-color: rgba(235, 235, 235, .5);
+        padding: 0 0 0 8px;
+        border-radius: 8px;
+        font-size: 16px;
+
+        &.price {
+          min-width: 200px;
+        }
+
+        span {
+          font-size: 80%;
+          opacity: .5;
+          margin-left: 4px;
+        }
+      }
+
+      span {
+        //margin-top: 10px;
+        opacity: .5;
+      }
+
+    }
+
+  }

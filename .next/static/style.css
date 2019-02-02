@@ -1,0 +1,222 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 15px;
+  font-size: 12px;
+  background-color: #f5f5f5;
+  background-repeat: no-repeat;
+  min-width: 320px;
+  overflow-y: scroll;
+  opacity: 1 !important;
+  background-position: center;
+}
+body *::selection {
+  background-color: #000;
+  color: #fff;
+}
+.price-sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  font-size: 20px;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 40px !important;
+}
+.price-sticky span {
+  margin-left: 2px;
+  opacity: 0.5;
+  font-size: 80%;
+}
+.zv-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 40px !important;
+  background-image: url("/static/logo.svg");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.zv-copyright {
+  padding: 20px 42px;
+}
+.zv-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+.zv-layout>* {
+  margin: 0 auto;
+}
+@media (max-width: 1080px) {
+  .zv-layout>* {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 720px) {
+  .zv-layout>* {
+    padding: 0;
+  }
+}
+h2 {
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.zv-box._inner {
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 21px 42px;
+  box-shadow: 0 14px 16px -16px rgba(0,0,0,0.4);
+  border: 2px solid #000;
+}
+@media (max-width: 720px) {
+  .zv-box._inner {
+    padding: 21px 21px;
+    border: none;
+  }
+}
+.zv-line {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 720px) {
+  .zv-line {
+    flex-wrap: wrap;
+  }
+}
+.zv-line .zv-calc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.zv-line .zv-calc>* {
+  flex-basis: 0;
+  min-width: 1px;
+  flex-grow: 1;
+  padding: 0 20px;
+}
+@media (max-width: 720px) {
+  .zv-line .zv-calc {
+    flex-basis: 100%;
+    min-width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .zv-line .zv-calc>* {
+    flex-basis: 0 !important;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 120% !important;
+  }
+  .zv-line .zv-calc>*:nth-child(2) {
+    max-width: 80px;
+  }
+  .zv-line .zv-calc>*:nth-child(3) {
+    display: none;
+  }
+}
+.zv-line .zv-calc input {
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(235,235,235,0.5);
+  padding: 0 0 0 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  border: 2px solid #dcdcdc;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+@media (max-width: 720px) {
+  .zv-line .zv-calc input {
+    margin-bottom: 0;
+    margin-bottom: 10px;
+  }
+}
+.zv-line .zv-calc input:hover {
+  border: 2px solid #c8c8c8;
+}
+.zv-line .zv-calc input:focus {
+  border: 2px solid #000;
+  outline: none;
+}
+.zv-line .zv-calc input[type='checkbox'] {
+  position: absolute;
+  left: -100vw;
+}
+.zv-line .zv-calc input[type='checkbox']+div {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+  position: relative;
+  background-color: #cdcdcd;
+  cursor: pointer;
+  padding: 0;
+}
+.zv-line .zv-calc input[type='checkbox']+div:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 20px;
+  width: 36px;
+  height: 36px;
+  transition: all 0.15s ease-in-out;
+  background-color: #000;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+}
+.zv-line .zv-calc input[type='checkbox']:checked+div:before {
+  left: calc(100% - 38px);
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+}
+.zv-line .zv-calc label {
+  font-size: 12px;
+  opacity: 0.75;
+}
+.zv-line .zv-calc label:last-child {
+  display: flex;
+  align-items: center;
+}
+.zv-line .zv-calc label+label {
+  min-height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.zv-line .zv-calc div {
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  background-color: rgba(235,235,235,0.5);
+  padding: 0 0 0 8px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.zv-line .zv-calc div.price {
+  min-width: 200px;
+}
+.zv-line .zv-calc div span {
+  font-size: 80%;
+  opacity: 0.5;
+  margin-left: 4px;
+}
+.zv-line .zv-calc span {
+  opacity: 0.5;
+}
+
+/*# sourceMappingURL=style.css.map*/
