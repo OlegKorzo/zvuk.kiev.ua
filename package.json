@@ -1,7 +1,6 @@
 {
   "name": "zvuk.kiev.ua",
-  "version": "2.0.0",
-  "description": "",
+  "version": "2.1.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +9,7 @@
     "start": "next start",
     "export": "next export"
   },
-  "author": "Oles Kryzhanivskyi",
+  "author": "Stepanov",
   "license": "ISC",
   "dependencies": {
     "@zeit/next-stylus": "^0.1.0",
@@ -20,5 +19,14 @@
     "react-dom": "^16.4.2",
     "react-tooltip": "^3.9.0",
     "stylus": "^0.54.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlegKorzo/zvuk.kiev.ua.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OlegKorzo/zvuk.kiev.ua/issues"
+  },
+  "homepage": "https://github.com/OlegKorzo/zvuk.kiev.ua#readme",
+  "description": "Web page of Zvuk"
 }

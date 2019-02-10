@@ -18,10 +18,10 @@ export default class extends React.Component {
 			vocal: 0,
 			backVocal: 0,
 			guitarAc: 0,
-			guitar: 0,
 			guitarLine: 0,
-			base: 0,
-			baseLine: 0,
+			guitar: 0,
+			basLine: 0,
+			basCombo: 0,
 			additional: 0,
 			synth: 0,
 			arrange: false,
@@ -48,11 +48,11 @@ export default class extends React.Component {
 		price = this.state.timing * (
 			+ this.state.vocal * 4 +
 			+ this.state.backVocal +
-			+ this.state.guitarAc * 3.5 +
-			+ this.state.guitarLine * 3 +
-		+ this.state.guitar * 5 +
-			+ this.state.base * 3 +
-			+ this.state.baseLine * 4 +
+			+ this.state.guitarAc * 3.5 + 	// Электроакустическая гитара (линия + микрофон)
+			+ this.state.guitarLine * 3 + 	// Количество треков эл.гитары (линия)*
+			+ this.state.guitar * 5 + 		// Кол-во треков эл.гитары (комбоусилитель)**
+			+ this.state.basLine * 3 +
+			+ this.state.basCombo * 4 +
 			+ this.state.additional * 3 +
 			+ this.state.reInstrument * 4 +
 			+ this.state.reVocal * 4 +
@@ -112,32 +112,31 @@ export default class extends React.Component {
 			</div>
 
 			<div className="zv-line">
-				<div data-tip="" className="zv-calc">
+				<div className="zv-calc">
 					<label>Электроакустическая гитара<br/>(линия + микрофон)</label>
 					<input type="number" name={"guitarAc"} value={this.state.guitarAc} onChange={this.handleChange}/>
 					<span>Кол-во треков</span>
 				</div>
-				<div data-tip="Запись в линию с последующей цифровой обработкой без применения комбоусилителя" className="zv-calc">
-					<label>Электрогитара<br/>(линия)</label>
+				<div className="zv-calc">
+					<label data-tip="Запись в линию с последующей цифровой обработкой без применения комбоусилителя">Электрогитара<br/>(линия)</label>
 					<input type="number" name={"guitarLine"} value={this.state.guitarLine} onChange={this.handleChange}/>
 					<span>Кол-во треков</span>
 				</div>
-				<div data-tip="Запись с применением процесса реампинга" className="zv-calc">
-					<label>Электрогитара<br/>(комбоусилитель)</label>
+				<div className="zv-calc">
+					<label data-tip="Запись с применением процесса реампинга">Электрогитара<br/>(комбоусилитель)</label>
 					<input type="number" name={"guitar"} value={this.state.guitar} onChange={this.handleChange}/>
 					<span>Кол-во треков</span>
 				</div>
-				<div data-tip="Запись в линию с последующей цифровой обработкой без применения комбоусилителя" className="zv-calc">
-					<label>Бас-гитара<br/>(линия)</label>
-					<input type="number" name={"baseLine"} value={this.state.baseLine} onChange={this.handleChange}/>
+				<div className="zv-calc">
+					<label data-tip="Запись в линию с последующей цифровой обработкой без применения комбоусилителя">Бас-гитара<br/>(линия)</label>
+					<input type="number" name={"basLine"} value={this.state.basLine} onChange={this.handleChange}/>
 					<span>Кол-во треков</span>
 				</div>
-				<div data-tip="Запись с применением процесса реампинга" className="zv-calc">
-					<label>Бас-гитара<br/>(комбоусилитель)</label>
-					<input type="number" name={"base"} value={this.state.base} onChange={this.handleChange}/>
+				<div className="zv-calc">
+					<label data-tip="Запись с применением процесса реампинга">Бас-гитара<br/>(комбоусилитель)</label>
+					<input type="number" name={"basCombo"} value={this.state.basCombo} onChange={this.handleChange}/>
 					<span>Кол-во треков</span>
 				</div>
-
 			</div>
 
 			<div className="zv-line">
@@ -152,12 +151,12 @@ export default class extends React.Component {
 					<span>Кол-во треков</span>
 				</div>
 				<div className="zv-calc">
-					<label>Повторная запись вокала</label>
+					<label>Повторная запись<br/>вокала</label>
 					<input type="number" name={"reVocal"} value={this.state.reVocal} onChange={this.handleChange}/>
 					<span> </span>
 				</div>
 				<div className="zv-calc">
-					<label>Повторная запись инструмента</label>
+					<label>Повторная запись<br/>инструмента</label>
 					<input type="number" name={"reInstrument"} value={this.state.reInstrument} onChange={this.handleChange}/>
 					<span> </span>
 				</div>
@@ -190,7 +189,7 @@ export default class extends React.Component {
 			+38.068.02.02.015
 		</div>
 	</div>
-	<ReactTooltip />
+	
 </div>
 		)
 	}
